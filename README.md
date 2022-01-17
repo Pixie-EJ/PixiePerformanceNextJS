@@ -1,7 +1,7 @@
 ## Criar branch
 
-git checkout dev
-git pull
+git checkout dev<br />
+git pull<br />
 git checkout -b nova-branch
 
 ## Instalar dependências:
