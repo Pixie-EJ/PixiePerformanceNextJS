@@ -1,1 +1,13 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+## Criar branch
+
+git checkout dev
+git pull
+git checkout -b nova-branch
+
+## Instalar dependências:
+
+npm install
+
+## Rodar o projeto:
+
+npm run dev
