@@ -1,9 +1,10 @@
-import PixieButton from "../components/PixieButton";
+import PixieButton from "../src/components/PixieButton";
+import SideNavbar from "../src/components/SideNavbar";
 
 export default function Index() {
   return (
     <div>
-      <PixieButton text="RankingPage" link="http://google.com"/>
+      <SideNavbar/>
     </div>
   )
 }
