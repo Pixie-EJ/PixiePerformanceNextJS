@@ -1,10 +1,11 @@
 import PixieButton from "../src/components/PixieButton";
-import SideNavbar from "../src/components/SideNavbar";
+import CardRow from "../src/components/CardRow";
+
 
 export default function Index() {
   return (
     <div>
-      <SideNavbar/>
+      <CardRow />
     </div>
   )
 }
