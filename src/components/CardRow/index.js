@@ -20,9 +20,9 @@ export default function CardRow() {
 
     return (
         <CardRowContainer>
-            <Card title="Pontuação esperada" info={cards[0]}/>
-            <Card title="Pontuação total" info={cards[1]}/>
-            <Card title="Porcentagem alcançada" info={`${cards[2]}%`}/>
+            <Card title="Pontuação esperada" info={cards[0] ?? '0'}/>
+            <Card title="Pontuação total" info={cards[1] ?? '0'}/>
+            <Card title="Porcentagem alcançada" info={cards[2] ? `${cards[2]}%` : '0%'}/>
         </CardRowContainer>
     )
 }

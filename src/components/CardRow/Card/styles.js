@@ -4,11 +4,12 @@ const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0px 13px;
-    width: 350px;
+    margin: 0px 12px;   
     background-color: #fff;
     border-radius: 8px;
     padding: 24px 40px;
+    width: 23%;
+    border: 1px solid #e9e9e9;
 `;
 const Title = styled.p`
     font-size: 16px;

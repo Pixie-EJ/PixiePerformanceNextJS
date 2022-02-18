@@ -3,9 +3,9 @@ import styled from 'styled-components';
 const CardRowContainer = styled.div`
     display: flex;
     justify-content: center;
-    margin: 200px;
     height: 106px;
-
+    width: 100%;
+    margin-bottom: 32px;
 `;
 
 export {CardRowContainer};
