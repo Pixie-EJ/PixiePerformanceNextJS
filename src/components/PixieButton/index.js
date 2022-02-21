@@ -1,10 +1,17 @@
-import React from 'react';
-import { Container, Link } from './styles';
+import React from "react";
+import { GreenButton, LightGreenButton } from "./styles";
 
 export default function PixieButton(props) {
+    if (props.color === 'lightgreen') {
+        return (
+            <LightGreenButton onClick={props.callback}>
+            {props.text}
+            </LightGreenButton>
+        );
+    }
     return (
-        <Container>
-            <Link href={props.link} target="_blank">{props.text}</Link>
-        </Container>
-    )
+        <GreenButton onClick={props.callback}>
+        {props.text}
+        </GreenButton>
+    );
 }
