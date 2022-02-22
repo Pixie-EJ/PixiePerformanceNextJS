@@ -6,7 +6,6 @@ const ContentContainer = styled.div`
 `;
 
 const FormContainer = styled.div`
-  
   width: 100%;
   margin: 16px 32px;
   height: 400px;
@@ -26,19 +25,13 @@ const RightContainer = styled.div`
 `;
 
 const InputContainer = styled.div`
-
-  position: flex;
-    border: none;
-    -webkit-appearance: none;
-    -ms-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: #f2f2f2;
-    padding: 12px;
-    border-radius: 3px;
-    width: 50%;
-    font-size: 14px;
-
+  display: inline-block;
+  background: #f2f2f2;
+  margin: 24px;
+  padding: 12px;
+  border-radius: 3px;
+  width: 30%;
+  font-size: 14px;
 `;
 
 

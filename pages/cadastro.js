@@ -31,17 +31,26 @@ export default function Home() {
         <TopNavbar title="Cadastrar Membro" buttonText="Concluído" />
         <ContentContainer>
             <FormContainer>
-            <form action="/send-data-here" method="post">
-            <label for="first">Nome</label>
-            <InputContainer><input type="text" id="nome" name="nome" /></InputContainer>            
-            <label for="last">Email</label>
-            <InputContainer><input type="email" id="email" name="email" /></InputContainer>
-            <label for="last">Cargo</label>
-            <InputContainer><input type="text" id="cargo" name="cargo" /></InputContainer>
-            <label for="last">Ativo</label>
-            <InputContainer><input type="checkbox" id="ativo" name="ativo" /></InputContainer>
-            <button type="submit">Concluido</button>
-           </form></FormContainer>          
+              <form action="/send-data-here" method="post">
+              <InputContainer>
+                <label for="first">Nome</label>
+                <input type="text" id="nome" name="nome" />
+              </InputContainer>    
+              <InputContainer>        
+                <label for="last">Email</label>
+                <input type="email" id="email" name="email" />
+              </InputContainer>
+              <InputContainer>
+                <label for="last">Cargo</label>
+                <input type="text" id="cargo" name="cargo" />
+              </InputContainer>
+              <InputContainer>
+                <label for="last">Ativo</label>
+                <input type="checkbox" id="ativo" name="ativo" />
+              </InputContainer>
+              <button type="submit">Concluido</button>
+              </form>
+            </FormContainer>          
         </ContentContainer>
       </RightContainer>
     </HomeContainer>
