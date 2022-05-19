@@ -30,7 +30,18 @@ export default function Home() {
       <RightContainer>
         <TopNavbar title="Cadastrar Membro" buttonText="Concluído" />
         <ContentContainer>
-            <FormContainer>
+            <PixieInput type="text" title="Nome" placeholder="Nome do membro" />
+            <PixieInput type="email" title="Email" placeholder="E-mail do membro" />
+            <PixieInput type="text" title="Cargo" placeholder="Nome do cargo" />
+            <PixieInput type="checkbox" title="Ativo" />
+        </ContentContainer>
+      </RightContainer>
+    </HomeContainer>
+  );
+}
+
+
+{/* <FormContainer>
               <form action="/send-data-here" method="post">
               <InputContainer>
                 <label for="first">Nome</label>
@@ -50,9 +61,4 @@ export default function Home() {
               </InputContainer>
               <button type="submit">Concluido</button>
               </form>
-            </FormContainer>          
-        </ContentContainer>
-      </RightContainer>
-    </HomeContainer>
-  );
-}
+            </FormContainer>           */}

@@ -4,18 +4,16 @@ export default function PixieInput(props) {
     if (props.type === 'select') {
         return (
             <>
-                <TitleInput>Evento</TitleInput>
+                <TitleInput>{props.title}</TitleInput>
                 <CustomSelect>
                     <option value='' disabled>{props.placeholder}</option>
-                    <option>Gustavo</option>
-                    <option>Lucas</option>
                 </CustomSelect>
             </>
         )
     }
     return (
         <>
-            <TitleInput>Evento</TitleInput>
+            <TitleInput>{props.title}</TitleInput>
             <CustomInput placeholder={props.placeholder}/>
         </>
     )
