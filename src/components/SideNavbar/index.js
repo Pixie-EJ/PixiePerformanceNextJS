@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router'
 import SideNavbarTile from './components/SideNavbarTile';
 import { Container, ImageContainer } from './styles';
 import MemberIcon from "../../../public/members-icon.png";
@@ -13,12 +14,20 @@ import TeamsIcon from "../../../public/teams-icon.png";
 import Logo from "../../../public/logo-pixie.svg";
 
 export default function SideNavbar(){
+    const router = useRouter();
+    const path = router.pathname.slice(1); 
+    
+    const routes = {
+        home: 'Overview',
+        members: 'Membros'
+    }
+
     return (
         <Container>
             <ImageContainer>
             <Image src={Logo} />
             </ImageContainer>
-            <SideNavbarTile icon={OverviewIcon}  sectionName="Overview"/>
+            <SideNavbarTile icon={OverviewIcon} sectionName={routes[path]}/>
             <SideNavbarTile icon={MemberIcon} sectionName="Membros"/>
             <SideNavbarTile icon={TeamsIcon} sectionName="Equipes"/>
             <SideNavbarTile icon={EventsIcon} sectionName="Eventos"/>
