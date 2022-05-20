@@ -1,7 +1,13 @@
 import Image from "next/image";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+
+const selectedOption = css`
+    background-color: var(--gray);
+    border: 1px solid var(--green);
+`;
 
 export const Container = styled.div`
+    ${({selected}) => selected && selectedOption}
     color: #575A61;
     padding: 22px 0;
     display: flex;

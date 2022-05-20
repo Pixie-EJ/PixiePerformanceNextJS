@@ -4,16 +4,16 @@ import { Container, IconContainer } from "./styles";
 import { useRouter } from 'next/router'
 
 export default function SideNavbarTile(props){
-    const {sectionName, icon, url = ''} = props;
+    const {sectionName, icon, selected, url} = props;
     const router = useRouter();
 
     const handleMenuClick = (e) =>{
         e.preventDefault()
-        router.push(url)
+        !selected && router.push(url)
     }
 
     return(
-        <Container onClick={handleMenuClick}>
+        <Container onClick={handleMenuClick} selected={selected}>
             <div>
                 <IconContainer>
                     <Image src={icon} layout="responsive"/>
