@@ -4,7 +4,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 20%;
+  width: 25%;
   min-height: 100vh;
   background-color: #e9e9e9;
 `;
