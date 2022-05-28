@@ -26,7 +26,7 @@ const options = [
     {
         "sectionName": "Eventos",
         "img": EventsIcon,
-        "url":""
+        "url":"create-event"
     },
     {
         "sectionName": "Categorias",
