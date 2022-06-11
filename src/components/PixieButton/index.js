@@ -1,5 +1,5 @@
 import React from "react";
-import { GreenButton, LightGreenButton } from "./styles";
+import { GreenButton, LightGreenButton, RegisterEventButton } from "./styles";
 
 export default function PixieButton(props) {
     if (props.color === 'lightgreen') {
