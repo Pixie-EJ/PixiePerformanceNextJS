@@ -1,19 +1,30 @@
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router'
-import SideNavbarTile from './components/SideNavbarTile';
+import SideNavbarTile from '../SideNavbar/components/SideNavbarTile';
+import { useRouter } from 'next/router';
 import { Container, ImageContainer } from './styles';
-import Logo from "../../../public/logo-pixie.svg";
-import options from './options';
-import { ButtonContainer } from '../TopNavbar/styles';
+import Hamburguer from "../../../public/bars-solid.svg";
+import options from '../SideNavbar/options';
 import PixieButton from '../PixieButton';
 
-export default function SideNavbar() {
+export function Menu() {
     const router = useRouter();
     const path = router.pathname.slice(1);
+    let mobile = true;
 
-    return (
-        <Container>
+    function ComponenteMobile(){
+        return (
+            <Container>
+                <ImageContainer>
+                    <Image src={Hamburguer} />
+                </ImageContainer>
+            </Container>
+        );
+    }
+
+    function ComponenteDesktop(){
+        return (
+            <Container>
             <ImageContainer>
             <Image src={Logo} />
             </ImageContainer>
@@ -30,6 +41,13 @@ export default function SideNavbar() {
                 );
             })}          
 
-        </Container>
+            </Container>
+        );
+    }
+
+    return (
+        <>
+            {mobile ? <ComponenteMobile/> : <ComponenteDesktop/>}
+        </>
     );
 }

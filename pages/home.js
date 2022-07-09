@@ -1,5 +1,6 @@
 import CardRow from "../src/components/CardRow";
 import SideNavbar from "../src/components/SideNavbar";
+import { Menu } from "../src/components/Menu";
 import TopNavbar from "../src/components/TopNavbar";
 import {
   ContentContainer,
@@ -24,7 +25,7 @@ export default function Home() {
 
   return (
     <HomeContainer>
-      <SideNavbar />
+      <Menu />
       <RightContainer>
         <TopNavbar title="Overview" buttonText="Lançar pontos" />
         <ContentContainer>
