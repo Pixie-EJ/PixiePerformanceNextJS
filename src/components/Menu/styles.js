@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
-  min-height: 100vh;
-  background-color: #e9e9e9;
 `;
 
 const ImageContainer = styled.div`
-  height: 140px;
-  display: flex;
+  
 `;
 
-export { ImageContainer, Container };
+const Button = styled.button`
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  margin: 55px 0 0 32px;
+`;
+
+export { ImageContainer, Container, Button };
