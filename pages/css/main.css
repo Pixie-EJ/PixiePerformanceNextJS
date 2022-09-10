@@ -4,10 +4,27 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #fff;
+  background-color: white;
 }
 
 :root {
-  --gray: #e5e5e5;
-  --green: #45AB6B;
+  --primary-default: #6EA96E;
+  --primary-dark: #347539;
+  --primary-light: #C8F4CB;
+  --primary-subtle: #F4FFF5;
+  --secondary-default: #45AB6B;
+  --secondary-dark: #2F7147;
+  --secondary-light: #ACEBC3;
+  --secondary-subtle: #EDF8F1;
+  --feedback-negative: #DA3030;
+  --feedback-warning: #DAAA30;
+  --feedback-success: #30DA74;
+  --feedback-infos: #3069DA;
+  --gray-100-o-85: #181818be;
+  --gray-100: #181818;
+  --gray-200: #212429;
+  --gray-300: #575A61;
+  --gray-400: #DADCDF;
+  --gray-500: #F4F5F8;
+  --white: #FFFFFF;
 }
