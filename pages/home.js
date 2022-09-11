@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import CardRow from "../src/components/CardRow";
 import SideNavbar from "../src/components/SideNavbar";
 import TopNavbar from "../src/components/TopNavbar";
@@ -9,8 +10,11 @@ import {
 } from "../src/styles/home";
 import { DataGrid } from "@mui/x-data-grid";
 import PixieInput from "../src/components/PixieInput";
+import useMobile from "../src/hooks/useMobile";
 
 export default function Home() {
+  const isMobile = useMobile();
+
   const columns = [
     { field: "name", headerName: "Nome", width: 300 },
     { field: "points", headerName: "Pontos", width: 150 },
@@ -24,7 +28,7 @@ export default function Home() {
 
   return (
     <HomeContainer>
-      <SideNavbar />
+      {!isMobile && <SideNavbar/>}
       <RightContainer>
         <TopNavbar title="Overview" buttonText="Lançar pontos" />
         <ContentContainer>
