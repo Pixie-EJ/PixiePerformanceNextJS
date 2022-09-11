@@ -8,14 +8,15 @@ import {
 } from "./styles";
 import PixieButton from "../PixieButton";
 
-export default function TopNavbar(props) {
+export default function TopNavbar({title, buttonText}) {
+
   return (
     <Container>
       <RightContainer>
-        <Title>{props.title}</Title>
+        <Title>{title}</Title>
         <ButtonContainer>
-          <PixieButton text={props.buttonText} />
-          <ProfileIcon>PI</ProfileIcon>
+          {buttonText != undefined && (<PixieButton text={buttonText} />)}
+          <ProfileIcon>PB</ProfileIcon>
         </ButtonContainer>
       </RightContainer>
     </Container>
