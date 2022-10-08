@@ -1,50 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import SideNavbarTile from "../SideNavbar/components/SideNavbarTile";
 import { useRouter } from "next/router";
-import { Container, ImageContainer, Button } from "./styles";
+import { Container, ImageContainer, Button, DropDown } from "./styles";
 import Hamburguer from "../../../public/bars-solid.svg";
 import options from "../SideNavbar/options";
 import PixieButton from "../PixieButton";
+import useMobile from "../../hooks/useMobile";
+import Logo from "../../../public/logo-pixie.svg";
 
 export function Menu() {
-   const router = useRouter();
-   const path = router.pathname.slice(1);
-   let mobile = true;
+  const router = useRouter();
+  const path = router.pathname.slice(1);
 
-   function ComponenteMobile() {
-      return (
-         <Container>
-            <ImageContainer>
-               <Button onClick={console.log("teste")}>
-                  <Image src={Hamburguer}></Image>
-               </Button>
-            </ImageContainer>
-         </Container>
-      );
-   }
+  const isMobile = useMobile();
 
-   function ComponenteDesktop() {
-      return (
-         <Container>
-            <ImageContainer>
-               <Image src={Logo} />
-            </ImageContainer>
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
 
-            {options.map((option, index) => {
-               return (
-                  <SideNavbarTile
-                     key={index}
-                     sectionName={option.sectionName}
-                     icon={option.img}
-                     url={option.url}
-                     selected={path == option.url}
-                  />
-               );
-            })}
-         </Container>
-      );
-   }
+  const toogleOpenDropDown = () => {
+    setIsDropDownOpen((state) => !state);
+  };
 
-   return <>{mobile ? <ComponenteMobile /> : <ComponenteDesktop />}</>;
+  function ComponenteMobile() {
+    return (
+      <Container>
+        {!isDropDownOpen ? (
+          <ImageContainer>
+            <Button onClick={toogleOpenDropDown}>
+              <Image src={Hamburguer}></Image>
+            </Button>
+          </ImageContainer>
+        ) : (
+          <DropDown>
+            <Button onClick={toogleOpenDropDown}>x</Button>
+            {options.map((option, index) => (
+              <SideNavbarTile
+                key={index}
+                sectionName={option.sectionName}
+                icon={option.img}
+                url={option.url}
+                selected={path == option.url}
+              />
+            ))}
+          </DropDown>
+        )}
+      </Container>
+    );
+  }
+
+  function ComponenteDesktop() {
+     setIsDropDownOpen(false);
+    return (
+      <Container>
+        <ImageContainer>
+          <Image src={Logo} />
+        </ImageContainer>
+
+        {options.map((option, index) => (
+          <SideNavbarTile
+            key={index}
+            sectionName={option.sectionName}
+            icon={option.img}
+            url={option.url}
+            selected={path == option.url}
+          />
+        ))}
+      </Container>
+    );
+  }
+
+  return isMobile ? <ComponenteMobile /> : <ComponenteDesktop />;
 }

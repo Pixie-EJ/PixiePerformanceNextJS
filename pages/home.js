@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import CardRow from "../src/components/CardRow";
 import SideNavbar from "../src/components/SideNavbar";
 import { Menu } from "../src/components/Menu";
@@ -12,6 +13,8 @@ import { DataGrid } from "@mui/x-data-grid";
 import PixieInput from "../src/components/PixieInput";
 
 export default function Home() {
+
+
   const columns = [
     { field: "name", headerName: "Nome", width: 300 },
     { field: "points", headerName: "Pontos", width: 150 },
