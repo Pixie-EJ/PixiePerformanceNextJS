@@ -2,8 +2,9 @@ import Image from "next/image";
 import styled, {css} from "styled-components";
 
 const selectedOption = css`
-    background-color: var(--gray);
-    border: 1px solid var(--green);
+    border: 1px solid #45AB6B;
+    background-color: #45AB6B;
+    color: #ECEEF1;
 `;
 
 export const Container = styled.div`
@@ -14,6 +15,8 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     cursor: pointer;
+    border-radius: 20px;
+    margin: 15px 0px 15px 0px;
     
     &:hover{
         background-color: var(--gray);
