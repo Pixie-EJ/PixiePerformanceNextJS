@@ -2,7 +2,7 @@ import Image from "next/image";
 import styled, {css} from "styled-components";
 
 const selectedOption = css`
-    color: #45AB6B;
+    color: var(--primary-default);
 `;
 
 const selectedOptionMobile = css`
@@ -35,6 +35,9 @@ const styleMenuMobile = css`
 
 const styleMenuDesktop = css`    
     ${({selected}) => selected ? selectedOption : notSelectedOption}
+    &:hover {
+        background-color: var(--gray-400);
+    }
 `;
 
 export const Container = styled.div`
@@ -44,10 +47,6 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     cursor: pointer;
-    
-    &:hover{
-        border: 0.1px solid black;
-    }
 
     > div {
         display: flex;

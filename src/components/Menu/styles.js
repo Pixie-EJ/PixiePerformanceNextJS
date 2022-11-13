@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   width: 25%;
   min-height: 100vh;
-  background-color: #e9e9e9;
+  background-color: var(--gray-500);
 `;
 
 export const ImageContainer = styled.div`

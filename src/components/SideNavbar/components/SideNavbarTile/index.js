@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import useMobile from "../../../../hooks/useMobile";
 
 export default function SideNavbarTile(props){
-    const {sectionName, icon, selected, url} = props;
+    const {sectionName, icon, iconSelected, selected, url} = props;
     const router = useRouter();
     const isMobile = useMobile();
 
@@ -18,7 +18,7 @@ export default function SideNavbarTile(props){
         <Container onClick={handleMenuClick} selected={selected} isMobile={isMobile}>
             <div>
                 <IconContainer>
-                    <Image src={icon} layout="responsive"/>
+                    <Image src={selected ? iconSelected : icon} layout="responsive"/>
                 </IconContainer>
                 {
                     sectionName

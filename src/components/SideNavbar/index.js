@@ -32,6 +32,7 @@ export default function SideNavbar() {
             key={index}
             sectionName={option.sectionName}
             icon={option.img}
+            iconSelected={option.imgSelected}
             url={option.url}
             selected={path == option.url}
           />
