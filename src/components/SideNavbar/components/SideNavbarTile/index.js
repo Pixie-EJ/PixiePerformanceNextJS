@@ -2,10 +2,12 @@ import Image from "next/image";
 import React from "react";
 import { Container, IconContainer } from "./styles";
 import { useRouter } from 'next/router'
+import useMobile from "../../../../hooks/useMobile";
 
 export default function SideNavbarTile(props){
     const {sectionName, icon, selected, url} = props;
     const router = useRouter();
+    const isMobile = useMobile();
 
     const handleMenuClick = (e) =>{
         e.preventDefault()
@@ -13,7 +15,7 @@ export default function SideNavbarTile(props){
     }
 
     return(
-        <Container onClick={handleMenuClick} selected={selected}>
+        <Container onClick={handleMenuClick} selected={selected} isMobile={isMobile}>
             <div>
                 <IconContainer>
                     <Image src={icon} layout="responsive"/>

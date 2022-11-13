@@ -2,24 +2,50 @@ import Image from "next/image";
 import styled, {css} from "styled-components";
 
 const selectedOption = css`
+    color: #45AB6B;
+`;
+
+const selectedOptionMobile = css`
     border: 1px solid #45AB6B;
     background-color: #45AB6B;
     color: #ECEEF1;
 `;
 
-export const Container = styled.div`
-    ${({selected}) => selected && selectedOption}
+const notSelectedOption = css`
     color: #575A61;
+    &:hover {
+        background-color: var(--gray);
+    }
+`;
+
+const notSelectedOptionMobile = css`
+    background-color: #D9D9D9;
+    color: #575A61;
+    &:hover {
+        background-color: var(--gray);
+    }
+`;
+
+const styleMenuMobile = css`
+    background-color: #D9D9D9;
+    margin: 15px 0px 15px 0px;
+    border-radius: 15px;
+    ${({selected}) => selected ? selectedOptionMobile : notSelectedOptionMobile}
+`;
+
+const styleMenuDesktop = css`    
+    ${({selected}) => selected ? selectedOption : notSelectedOption}
+`;
+
+export const Container = styled.div`
+    ${({isMobile}) => isMobile ? styleMenuMobile : styleMenuDesktop}
     padding: 22px 0;
     display: flex;
     align-items: center;
     width: 100%;
     cursor: pointer;
-    border-radius: 20px;
-    margin: 15px 0px 15px 0px;
     
     &:hover{
-        background-color: var(--gray);
         border: 0.1px solid black;
     }
 

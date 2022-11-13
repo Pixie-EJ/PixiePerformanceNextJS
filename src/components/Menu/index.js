@@ -8,6 +8,8 @@ import options from "../SideNavbar/options";
 import PixieButton from "../PixieButton";
 import useMobile from "../../hooks/useMobile";
 import Logo from "../../../public/logo-pixie.svg";
+import CloseMenuIcon from "../../../public/closemenu-icon.svg";
+
 
 export function Menu() {
   const router = useRouter();
@@ -32,7 +34,7 @@ export function Menu() {
           </ImageContainer>
         ) : (
           <DropDown>
-            <Button onClick={toogleOpenDropDown}>x</Button>
+            <Button onClick={toogleOpenDropDown}><Image src={CloseMenuIcon}/></Button>
             {options.map((option, index) => (
               <SideNavbarTile
                 key={index}
