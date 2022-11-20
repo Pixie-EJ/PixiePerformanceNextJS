@@ -35,8 +35,8 @@ export const Form = styled.form`
     margin-bottom: .5em;
   }
   input {
-    background-color: var(--gray-100);
-    border:none;
+    background-color: ${({ theme }) => theme.COLORS.gray_200};
+    border: 2px solid ${({ theme }) => theme.COLORS.gray_200};
     border-radius:5px;
     padding: 1em;
     min-width: 300px;

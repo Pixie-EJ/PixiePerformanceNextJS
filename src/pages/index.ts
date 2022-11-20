@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 export default function Index() {
   const route = useRouter();
   useEffect(() => {
-    route.push("home");
+    route.push("login");
   });
   return null;
 }

@@ -6,7 +6,6 @@ import TopNavbar from "@components/TopNavbar";
 import { DataGrid } from "@mui/x-data-grid";
 import { ContentContainer, HomeContainer, RightContainer, TableContainer } from "./styles";
 
-
 export default function Home() {
   const columns = [
     { field: "name", headerName: "Nome", width: 300 },
