@@ -1,11 +1,20 @@
 {
-  "presets": ["next/babel"],
+  "presets": [
+    "next/babel"
+  ],
   "plugins": [
-    ["styled-components", { "ssr": true }],
+    [
+      "styled-components",
+      {
+        "ssr": true
+      }
+    ],
     [
       "babel-plugin-module-resolver",
       {
-        "root": ["./src/"],
+        "root": [
+          "./src/"
+        ],
         "alias": {
           "pages": "./src/pages",
           "services": "./src/services",
@@ -20,4 +29,3 @@
     ]
   ]
 }
-

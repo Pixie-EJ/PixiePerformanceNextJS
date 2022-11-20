@@ -12,7 +12,7 @@ const TitleInput = styled.p`
 const CustomSelect = styled.select`
     padding 24px 16px;
     border-radius: 8px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.COLORS.white};
 `;
 
 export { CustomInput, TitleInput, CustomSelect };

@@ -31,7 +31,7 @@ export const Form = styled.form`
   justify-content:flex-start;
 
   label {
-    color: var(--gray-400);
+    color: ${({theme}) => theme.COLORS.gray_400};
     margin-bottom: .5em;
   }
   input {
@@ -58,7 +58,7 @@ export const Form = styled.form`
 
 
 export const Button = styled.button`
-  background-color: var(--secondary-default);
+  background-color: ${({ theme }) => theme.COLORS.primary_dark};
   border:none;
   margin-top: 1em;
   padding: 1em;
@@ -67,6 +67,6 @@ export const Button = styled.button`
   cursor: pointer;
 
   &:hover{
-    background-color: var(--primary-default);
+    background-color: ${({ theme }) => theme.COLORS.secondary_default};
   }
 `

@@ -1,33 +1,34 @@
+import { theme } from "@theme/index";
 import Image from "next/image";
 import styled, {css} from "styled-components";
 
 const selectedOption = css`
-    color: var(--primary-default);
+    color: ${({theme}) => theme.COLORS.primary_default};
 `;
 
 const selectedOptionMobile = css`
-    border: 1px solid #45AB6B;
-    background-color: #45AB6B;
-    color: #ECEEF1;
+    border: 1px solid ${({theme}) => theme.COLORS.primary_default};
+    background-color: ${({theme}) => theme.COLORS.primary_default};
+    color: ${({theme}) => theme.COLORS.gray_500};
 `;
 
 const notSelectedOption = css`
-    color: #575A61;
+    color: ${({theme}) => theme.COLORS.gray_300};
     &:hover {
-        background-color: var(--gray);
+        background-color: ${({theme}) => theme.COLORS.gray_100};
     }
 `;
 
 const notSelectedOptionMobile = css`
-    background-color: #D9D9D9;
-    color: #575A61;
+    background-color: ${({theme}) => theme.COLORS.gray_400};
+    color: ${({theme}) => theme.COLORS.gray_300};
     &:hover {
-        background-color: var(--gray);
+        background-color: ${({theme}) => theme.COLORS.gray_100};
     }
 `;
 
 const styleMenuMobile = css`
-    background-color: #D9D9D9;
+    background-color: ${({theme}) => theme.COLORS.gray_400};
     margin: 15px 0px 15px 0px;
     border-radius: 15px;
     ${({selected}) => selected ? selectedOptionMobile : notSelectedOptionMobile}
@@ -36,7 +37,7 @@ const styleMenuMobile = css`
 const styleMenuDesktop = css`    
     ${({selected}) => selected ? selectedOption : notSelectedOption}
     &:hover {
-        background-color: var(--gray-400);
+        background-color: ${({theme}) => theme.COLORS.gray_400};
     }
 `;
 

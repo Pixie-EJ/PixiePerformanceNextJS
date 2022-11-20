@@ -6,7 +6,7 @@ const Container = styled.div`
   align-items: center;
   width: 25%;
   min-height: 100vh;
-  background-color: #e9e9e9;
+  background-color: ${({theme}) => theme.COLORS.gray_500};
 `;
 
 const ImageContainer = styled.div`
