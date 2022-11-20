@@ -1,4 +1,4 @@
-import { useContext, createContext, useState } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 
 const LoadingContext = createContext({});
 
@@ -21,3 +21,5 @@ const useLoading = () => {
 }
 
 export {LoadingProvider, useLoading};
+// TODO refatorar esse cara aq, faz sentido um hook estar em context?
+

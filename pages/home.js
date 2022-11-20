@@ -11,11 +11,11 @@ import {
 } from "../src/styles/home";
 import { DataGrid } from "@mui/x-data-grid";
 import PixieInput from "../src/components/PixieInput";
-import { Login } from "../src/pages/signin/Login";
+import { Login } from "@pages/signin/Login";
+import { ThemeProvider } from 'styled-components'
+import { theme } from '@theme/index'
 
 export default function Home() {
-
-
   // const columns = [
   //   { field: "name", headerName: "Nome", width: 300 },
   //   { field: "points", headerName: "Pontos", width: 150 },
@@ -41,9 +41,9 @@ export default function Home() {
   //     </RightContainer>
   //   </HomeContainer>
   // );
-
-
   return (
-    <Login/>
+    <ThemeProvider theme={theme}>
+      <Login />
+    </ThemeProvider>
   )
 }

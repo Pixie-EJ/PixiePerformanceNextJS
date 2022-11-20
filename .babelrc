@@ -1,4 +1,23 @@
 {
-    "presets": ["next/babel"],
-    "plugins": [["styled-components", { "ssr": true }]]
+  "presets": ["next/babel"],
+  "plugins": [
+    ["styled-components", { "ssr": true }],
+    [
+      "babel-plugin-module-resolver",
+      {
+        "root": ["./src/"],
+        "alias": {
+          "pages": "./src/pages",
+          "services": "./src/services",
+          "styles": "./src/styles",
+          "hooks": "./src/hooks",
+          "global": "./src/global",
+          "contexts": "./src/contexts",
+          "components": "./src/components",
+          "theme": "./src/theme"
+        }
+      }
+    ]
+  ]
 }
+

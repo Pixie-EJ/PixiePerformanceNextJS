@@ -15,4 +15,5 @@ const useMobile = () => {
   return isMobile;
 };
 
+// TODO refatorar esse cara aqui
 export default useMobile;
