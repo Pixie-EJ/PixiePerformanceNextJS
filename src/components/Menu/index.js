@@ -27,14 +27,17 @@ export function Menu() {
     return (
       <Container>
         {!isDropDownOpen ? (
-          <ImageContainer>
-            <Button onClick={toogleOpenDropDown}>
+          <ImageContainer isDropDownOpen={isDropDownOpen}>
+            <Button onClick={toogleOpenDropDown} isDropDownOpen={isDropDownOpen}>
               <Image src={Hamburguer}></Image>
             </Button>
           </ImageContainer>
         ) : (
           <DropDown>
-            <Button onClick={toogleOpenDropDown}><Image src={CloseMenuIcon}/></Button>
+            <Button onClick={toogleOpenDropDown} isDropDownOpen={isDropDownOpen}>X</Button>
+            <ImageContainer isDropDownOpen={isDropDownOpen}>
+              <Image src={Logo} />
+            </ImageContainer>
             {options.map((option, index) => (
               <SideNavbarTile
                 key={index}
@@ -43,6 +46,7 @@ export function Menu() {
                 iconSelected={option.imgSelected}
                 url={option.url}
                 selected={path == option.url}
+                isDropDownOpen={isDropDownOpen}
               />
             ))}
           </DropDown>
@@ -55,7 +59,7 @@ export function Menu() {
      setIsDropDownOpen(false);
     return (
       <Container>
-        <ImageContainer>
+        <ImageContainer isDropDownOpen={isDropDownOpen}>
           <Image src={Logo} />
         </ImageContainer>
 
@@ -67,6 +71,7 @@ export function Menu() {
             iconSelected={option.imgSelected}
             url={option.url}
             selected={path == option.url}
+            isDropDownOpen={isDropDownOpen}
           />
         ))}
       </Container>

@@ -9,6 +9,7 @@ import { ButtonContainer } from '../TopNavbar/styles';
 import PixieButton from '../PixieButton';
 
 import useMobile from "../../hooks/useMobile";
+// import { isDropDownOpen } from "../Menu";
 
 import options from "./options";
 
@@ -35,6 +36,7 @@ export default function SideNavbar() {
             iconSelected={option.imgSelected}
             url={option.url}
             selected={path == option.url}
+            isDropDownOpen={false}
           />
         );
       })}

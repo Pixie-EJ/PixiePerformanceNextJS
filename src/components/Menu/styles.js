@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -9,20 +9,35 @@ export const Container = styled.div`
   background-color: var(--gray-500);
 `;
 
-export const ImageContainer = styled.div`
+//LogoDropdown precisa de um icone maior
+const LogoDropdown = css`
+  display: block;
+  margin: 30px auto 60px auto;
+`;
+
+const LogoDesktop = css`
   height: 140px;
   display: flex;
 `;
 
+export const ImageContainer = styled.div`
+  ${({isDropDownOpen}) => isDropDownOpen ? LogoDropdown : LogoDesktop}
+`;
+
 export const DropDown = styled.section`
   position: absolute;
-  border: 2px solid black;
-  top: 25px;
-  left: 25px;
-  width: 50%;
-  min-width: 315px;
-  background-color: white;
+  border: 1px solid var(--gray-500);
+  left: 0%;
+  min-width: 100%;
+  background-color: var(--gray-500);
   z-index: 15;
+  padding: 50px;
+  text-align: center;
+`;
+
+const ButtonCloseDropdown = css`
+  width: 100%;
+  text-align: end;
 `;
 
 export const Button = styled.button`
@@ -30,5 +45,5 @@ export const Button = styled.button`
   background-color: transparent;
   border: none;
   width: 30px;
-  margin: 55px 0 0 32px;
+  ${({isDropDownOpen}) => isDropDownOpen ? ButtonCloseDropdown : `margin: 55px 0 0 32px;`}
 `;

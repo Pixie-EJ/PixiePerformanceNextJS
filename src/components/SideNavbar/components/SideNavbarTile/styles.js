@@ -30,10 +30,22 @@ const styleMenuMobile = css`
     background-color: #D9D9D9;
     margin: 15px 0px 15px 0px;
     border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    justify-self: flex-end;
+    > div {
+        display: flex;
+    }
     ${({selected}) => selected ? selectedOptionMobile : notSelectedOptionMobile}
 `;
 
-const styleMenuDesktop = css`    
+const styleMenuDesktop = css`
+    > div {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-left: 20%;
+    }
     ${({selected}) => selected ? selectedOption : notSelectedOption}
     &:hover {
         background-color: var(--gray-400);
@@ -46,14 +58,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
-    cursor: pointer;
-
-    > div {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        margin-left: 20%;
-    }
+    cursor: pointer;    
 `
 export const IconContainer = styled.div`
     width: 20px;
