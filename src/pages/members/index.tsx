@@ -2,7 +2,7 @@ import CardRow from "@components/CardRow";
 import SideNavbar from "@components/SideNavbar";
 import TopNavbar from "@components/TopNavbar";
 import { DataGrid } from "@mui/x-data-grid";
-import { ContentContainer, HomeContainer, RightContainer, TableContainer } from "@styles/home";
+import { ContentContainer, HomeContainer, RightContainer, TableContainer } from "../../styles";
 // TODO dar uma olhada nesses estilos de home que estão sendo usado em alguns componentes
 
 export default function Home() {

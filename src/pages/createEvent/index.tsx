@@ -2,7 +2,7 @@
 import PixieInput from "@components/PixieInput";
 import SideNavbar from "@components/SideNavbar";
 import TopNavbar from "@components/TopNavbar";
-import { RightContainer } from "@styles/home";
+import { RightContainer } from "../../styles";
 import { EventContainer } from "./styles";
 
 export default function CreateEvent() {
@@ -10,7 +10,7 @@ export default function CreateEvent() {
       <EventContainer>
          <SideNavbar />
          <RightContainer>
-            <TopNavbar title="Cadastrar evento" />
+            <TopNavbar title="Cadastrar evento" buttonText=""/>
             <PixieInput />
          </RightContainer>
        </EventContainer>

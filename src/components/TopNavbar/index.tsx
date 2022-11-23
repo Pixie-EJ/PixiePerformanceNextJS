@@ -8,7 +8,13 @@ import {
 } from "./styles";
 import PixieButton from "../PixieButton";
 
-export default function TopNavbar({title, buttonText}) {
+interface topNavProps {
+  title: string,
+  buttonText: string
+}
+
+
+export default function TopNavbar({title, buttonText}: topNavProps) {
 
   return (
     <Container>

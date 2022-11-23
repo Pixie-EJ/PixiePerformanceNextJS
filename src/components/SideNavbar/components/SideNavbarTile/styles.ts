@@ -2,6 +2,12 @@ import { theme } from "@theme/index";
 import Image from "next/image";
 import styled, {css} from "styled-components";
 
+interface styledProps {
+    selected:boolean,
+    isMobile:boolean
+}
+
+
 const selectedOption = css`
     color: ${({theme}) => theme.COLORS.primary_default};
 `;
@@ -27,21 +33,21 @@ const notSelectedOptionMobile = css`
     }
 `;
 
-const styleMenuMobile = css`
+const styleMenuMobile = css<styledProps>`
     background-color: ${({theme}) => theme.COLORS.gray_400};
     margin: 15px 0px 15px 0px;
     border-radius: 15px;
     ${({selected}) => selected ? selectedOptionMobile : notSelectedOptionMobile}
 `;
 
-const styleMenuDesktop = css`    
+const styleMenuDesktop = css<styledProps>`    
     ${({selected}) => selected ? selectedOption : notSelectedOption}
     &:hover {
         background-color: ${({theme}) => theme.COLORS.gray_400};
     }
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<styledProps>` 
     ${({isMobile}) => isMobile ? styleMenuMobile : styleMenuDesktop}
     padding: 22px 0;
     display: flex;
@@ -50,6 +56,7 @@ export const Container = styled.div`
     cursor: pointer;
 
     > div {
+        color: ${({selected, theme}) => selected ? theme.COLORS.primary_default : theme.COLORS.gray_300}
         display: flex;
         text-align: center;
         justify-content: center;
