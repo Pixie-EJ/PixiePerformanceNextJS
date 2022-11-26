@@ -8,13 +8,12 @@ import {
 } from "./styles";
 import PixieButton from "../PixieButton";
 
-interface topNavProps {
+interface Props {
   title: string,
   buttonText: string
 }
 
-
-export default function TopNavbar({title, buttonText}: topNavProps) {
+export default function TopNavbar({title, buttonText}: Props) {
 
   return (
     <Container>
