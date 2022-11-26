@@ -1,11 +1,16 @@
 import React from 'react';
 import { CardContainer, Info, Title } from './styles';
 
-export default function Card(props) {
+type Props = {
+	title: string;
+	info: string;
+}
+
+export default function Card({ title, info }: Props) {
 	return (
 		<CardContainer>
-			<Title>{props.title}</Title>
-			<Info>{props.info}</Info>
+			<Title>{title}</Title>
+			<Info>{info}</Info>
 		</CardContainer>
 	)
 }

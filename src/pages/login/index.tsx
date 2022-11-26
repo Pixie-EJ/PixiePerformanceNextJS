@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, Container, Form, Header } from './styles';
 // import Logo from './Logo Principal.png'
 
+// TODO dar uma olhada melhor em como refatorar esse cara aq
 
 export default function Login() {
   const route = useRouter();

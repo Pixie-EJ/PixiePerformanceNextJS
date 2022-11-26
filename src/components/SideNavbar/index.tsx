@@ -1,16 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import SideNavbarTile from "./components/SideNavbarTile";
+import SideNavbarTitle from "./components/SideNavbarTitle";
 import { Container, ImageContainer } from "./styles";
 import Logo from "../../../public/logo-pixie.svg";
 
-import { ButtonContainer } from '../TopNavbar/styles';
-import PixieButton from '../PixieButton';
-
 import useMobile from "../../hooks/useMobile";
-
-import options from "./options";
+import { sideNavbarOptions } from "@global/sideNavbarOptions";
 
 export default function SideNavbar() {
   const router = useRouter();
@@ -26,12 +22,12 @@ export default function SideNavbar() {
         <Image src={Logo} />
       </ImageContainer>
 
-      {options.map((option, index) => {
+      {sideNavbarOptions.map((option, index) => {
         return (
-          <SideNavbarTile
+          <SideNavbarTitle
             key={index}
             sectionName={option.sectionName}
-            icon={option.img}
+            icon={option.icon}
             url={option.url}
             selected={path == option.url}
           />

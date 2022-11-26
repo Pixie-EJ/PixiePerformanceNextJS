@@ -2,7 +2,7 @@
 import PixieInput from "@components/PixieInput";
 import SideNavbar from "@components/SideNavbar";
 import TopNavbar from "@components/TopNavbar";
-import { RightContainer } from "../../styles";
+import { RightContainer } from "@styles/index";
 import { EventContainer } from "./styles";
 
 export default function CreateEvent() {

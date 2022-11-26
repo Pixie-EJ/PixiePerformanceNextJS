@@ -12,15 +12,10 @@ const TableContainer = styled.div`
   height: 400px;
 `;
 
-const HomeContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
 const RightContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
 `;
 
-export { ContentContainer, TableContainer, HomeContainer, RightContainer };
+export { ContentContainer, TableContainer, RightContainer };

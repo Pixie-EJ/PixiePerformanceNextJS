@@ -2,10 +2,11 @@ import CardRow from "@components/CardRow";
 import SideNavbar from "@components/SideNavbar";
 import TopNavbar from "@components/TopNavbar";
 import { DataGrid } from "@mui/x-data-grid";
-import { ContentContainer, HomeContainer, RightContainer, TableContainer } from "../../styles";
+import { ContentContainer, RightContainer, TableContainer } from "@styles/index";
+import { MembersContainer } from "./styles";
 // TODO dar uma olhada nesses estilos de home que estão sendo usado em alguns componentes
 
-export default function Home() {
+export default function Members() {
   const columns = [
     { field: "name", headerName: "Nome", width: 300 },
     { field: "jobTitle", headerName: "Cargo", width: 300 },
@@ -20,7 +21,7 @@ export default function Home() {
   ];
 
   return (
-    <HomeContainer>
+    <MembersContainer>
       <SideNavbar />
       <RightContainer>
         <TopNavbar title="Membros" buttonText="Cadastrar membro" />
@@ -31,6 +32,6 @@ export default function Home() {
           </TableContainer>
         </ContentContainer>
       </RightContainer>
-    </HomeContainer>
+    </MembersContainer>
   );
 }

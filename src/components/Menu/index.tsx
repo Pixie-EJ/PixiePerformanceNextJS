@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import SideNavbarTile from "../SideNavbar/components/SideNavbarTile";
+import SideNavbarTitle from "../SideNavbar/components/SideNavbarTitle";
 import { useRouter } from "next/router";
 import { Container, ImageContainer, Button, DropDown } from "./styles";
 import Hamburguer from "../../../public/bars-solid.svg";
-import options from "../SideNavbar/options";
 import PixieButton from "../PixieButton";
 import useMobile from "../../hooks/useMobile";
 import Logo from "../../../public/logo-pixie.svg";
 import CloseMenuIcon from "../../../public/closemenu-icon.svg";
+import { sideNavbarOptions } from "@global/sideNavbarOptions";
 
 
 export function Menu() {
@@ -35,12 +35,11 @@ export function Menu() {
         ) : (
           <DropDown>
             <Button onClick={toogleOpenDropDown}><Image src={CloseMenuIcon}/></Button>
-            {options.map((option, index) => (
-              <SideNavbarTile
+            {sideNavbarOptions.map((option, index) => (
+              <SideNavbarTitle
                 key={index}
                 sectionName={option.sectionName}
-                icon={option.img}
-                iconSelected={option.imgSelected}
+                icon={option.icon}
                 url={option.url}
                 selected={path == option.url}
               />
@@ -59,12 +58,11 @@ export function Menu() {
           <Image src={Logo} />
         </ImageContainer>
 
-        {options.map((option, index) => (
-          <SideNavbarTile
+        {sideNavbarOptions.map((option, index) => (
+          <SideNavbarTitle
             key={index}
             sectionName={option.sectionName}
-            icon={option.img}
-            iconSelected={option.imgSelected}
+            icon={option.icon}
             url={option.url}
             selected={path == option.url}
           />

@@ -7,7 +7,11 @@ interface styledProps {
     isMobile:boolean
 }
 
-
+// todo precisamos refatorar esse cara aq, ta muito confuso
+// tem um monte de constante de estilo aq, ta confuso de entender
+// vc não consegue bater o olho e ter uma clareza doq faz oq
+// tenq ler cada const por const para entender e ainda tem esilos
+// que estão anulando outros...
 const selectedOption = css`
     color: ${({theme}) => theme.COLORS.primary_default};
 `;
@@ -56,10 +60,6 @@ export const Container = styled.div<styledProps>`
     cursor: pointer;
 
     > div {
-        color: ${({selected, theme}) => selected ? theme.COLORS.primary_default : theme.COLORS.gray_300}
-        display: flex;
-        text-align: center;
-        justify-content: center;
         margin-left: 20%;
     }
 `

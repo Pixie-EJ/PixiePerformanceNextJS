@@ -1,6 +1,7 @@
 import React from "react";
 import { GreenButton, LightGreenButton } from "./styles";
 
+// TODO refatorar isso aq com a glr da pixie
 export default function PixieButton(props) {
     if (props.color === 'lightgreen') {
         return (

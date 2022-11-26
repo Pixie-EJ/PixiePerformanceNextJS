@@ -1,5 +1,6 @@
 import { CustomInput, TitleInput, CustomSelect } from "./styles"
 
+// TODO refatorar isso com a pixie
 export default function PixieInput(props) {
     if (props.type === 'select') {
         return (

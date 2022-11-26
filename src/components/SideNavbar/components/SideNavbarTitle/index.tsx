@@ -3,16 +3,16 @@ import React from "react";
 import { Container, IconContainer } from "./styles";
 import { useRouter } from 'next/router'
 import useMobile from "../../../../hooks/useMobile";
+import { IconProps } from 'phosphor-react';
 
 interface Props {
     sectionName: string,
-    icon: string,
+    icon: IconProps,
     url: string,
-    selected: boolean
+    selected: boolean,
 }
 
-
-export default function SideNavbarTile({icon,sectionName,selected,url}: Props){
+export default function SideNavbarTitle({ icon, sectionName, selected, url }: Props){
     const router = useRouter();
     const isMobile = useMobile();
 
@@ -23,14 +23,14 @@ export default function SideNavbarTile({icon,sectionName,selected,url}: Props){
 
     return(
         <Container onClick={handleMenuClick} selected={selected} isMobile={isMobile}>
-            <div>
+            <>
                 <IconContainer>
-                    {/* <Image src={icon} layout="responsive"/> */}
+                    {icon}
                 </IconContainer>
                 {
                     sectionName
                 }
-            </div>
+            </>
         </Container>
     );
 };

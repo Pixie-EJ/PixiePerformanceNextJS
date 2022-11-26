@@ -4,7 +4,8 @@ import CardRow from "@components/CardRow";
 import { Menu } from "@components/Menu";
 import TopNavbar from "@components/TopNavbar";
 import { DataGrid } from "@mui/x-data-grid";
-import { ContentContainer, HomeContainer, RightContainer, TableContainer } from "./styles";
+import { ContentContainer, RightContainer, TableContainer } from "@styles/index";
+import { HomeContainer } from "./styles";
 
 interface columnsProps {
   field: string,
