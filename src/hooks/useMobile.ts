@@ -16,4 +16,5 @@ const useMobile = () => {
 };
 
 // TODO refatorar esse cara aqui
+// NÃO PRECISA AGR
 export default useMobile;

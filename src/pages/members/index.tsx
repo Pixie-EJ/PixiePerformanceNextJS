@@ -4,7 +4,6 @@ import TopNavbar from "@components/TopNavbar";
 import { DataGrid } from "@mui/x-data-grid";
 import { ContentContainer, RightContainer, TableContainer } from "@styles/index";
 import { MembersContainer } from "./styles";
-// TODO dar uma olhada nesses estilos de home que estão sendo usado em alguns componentes
 
 export default function Members() {
   const columns = [

@@ -22,4 +22,5 @@ const useLoading = () => {
 
 export {LoadingProvider, useLoading};
 // TODO refatorar esse cara aq, faz sentido um hook estar em context?
+// NÃO PRECISA AGR
 

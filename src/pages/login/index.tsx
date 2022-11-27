@@ -1,3 +1,4 @@
+import PixieInput from '@components/PixieInput';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { Button, Container, Form, Header } from './styles';
@@ -22,10 +23,18 @@ export default function Login() {
       </Header>
       <div>
         <Form>
-          <label htmlFor="email">Endereço de e-mail</label>
-          <input id="email" type="email" placeholder={'Digite seu e-mail'}/>
-          <label htmlFor="password">Senha</label>
-          <input id="password" type="password" placeholder={'**********'}/>
+          {/* <label htmlFor="email">Endereço de e-mail</label>
+          <input id="email" type="email" placeholder={'Digite seu e-mail'}/> */}
+          <PixieInput 
+            title='E-mail'
+            placeholder='lalalal padilha'
+          />
+          {/* <label htmlFor="password">Senha</label>
+          <input id="password" type="password" placeholder={'**********'}/> */}
+          <PixieInput 
+            title='Senha'
+            placeholder='lalalal padilha'
+          />
           <Button onClick={handleClick}> Entrar na plataforma</Button>
           <a href="">Esqueceu sua senha?</a>
           <a href="">Não possui conta ? Crie uma agora!</a>

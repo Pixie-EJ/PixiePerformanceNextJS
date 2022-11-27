@@ -1,13 +1,19 @@
 import { CustomInput, TitleInput, CustomSelect } from "./styles"
 
+type Props = {
+    type?: string;
+    placeholder: string;
+    title: string;
+}
+
 // TODO refatorar isso com a pixie
-export default function PixieInput(props) {
-    if (props.type === 'select') {
+export default function PixieInput({ title, type, placeholder }: Props) {
+    if (type === 'select') {
         return (
             <>
-                <TitleInput>Evento</TitleInput>
+                <TitleInput>{title}</TitleInput>
                 <CustomSelect>
-                    <option value='' disabled>{props.placeholder}</option>
+                    <option value='' disabled>{placeholder}</option>
                     <option>Gustavo</option>
                     <option>Lucas</option>
                 </CustomSelect>
@@ -16,8 +22,8 @@ export default function PixieInput(props) {
     }
     return (
         <>
-            <TitleInput>Evento</TitleInput>
-            <CustomInput placeholder={props.placeholder}/>
+            <TitleInput>{title}</TitleInput>
+            <CustomInput placeholder={placeholder}/>
         </>
     )
 }
