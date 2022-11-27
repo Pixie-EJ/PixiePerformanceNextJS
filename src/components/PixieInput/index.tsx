@@ -1,8 +1,8 @@
+import { InputHTMLAttributes } from 'react'
 import { CustomInput, TitleInput, CustomSelect } from "./styles"
 
-type Props = {
+type Props = InputHTMLAttributes<HTMLInputElement> & {
     type?: string;
-    placeholder: string;
     title: string;
 }
 

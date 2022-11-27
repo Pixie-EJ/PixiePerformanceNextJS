@@ -26,14 +26,14 @@ export default function Login() {
           {/* <label htmlFor="email">Endereço de e-mail</label>
           <input id="email" type="email" placeholder={'Digite seu e-mail'}/> */}
           <PixieInput 
+            placeholder='asdjksadhjkashd'
             title='E-mail'
-            placeholder='lalalal padilha'
           />
           {/* <label htmlFor="password">Senha</label>
           <input id="password" type="password" placeholder={'**********'}/> */}
           <PixieInput 
             title='Senha'
-            placeholder='lalalal padilha'
+            placeholder='asdjksadhjkashd'
           />
           <Button onClick={handleClick}> Entrar na plataforma</Button>
           <a href="">Esqueceu sua senha?</a>
