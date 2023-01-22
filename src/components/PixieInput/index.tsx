@@ -1,29 +1,23 @@
 import { InputHTMLAttributes } from 'react'
-import { CustomInput, TitleInput, CustomSelect } from "./styles"
+import { Container, CustomInput, Icon, TitleInput } from "./styles"
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
-    type?: string;
-    title: string;
+	label: string;
+	icon: JSX.Element;
 }
 
-// TODO refatorar isso com a pixie
-export default function PixieInput({ title, type, placeholder }: Props) {
-    if (type === 'select') {
-        return (
-            <>
-                <TitleInput>{title}</TitleInput>
-                <CustomSelect>
-                    <option value='' disabled>{placeholder}</option>
-                    <option>Gustavo</option>
-                    <option>Lucas</option>
-                </CustomSelect>
-            </>
-        )
-    }
-    return (
-        <>
-            <TitleInput>{title}</TitleInput>
-            <CustomInput placeholder={placeholder}/>
-        </>
-    )
+export default function PixieInput({ label, icon, ...rest }: Props) {
+	return (
+		<>
+			<TitleInput>{label}</TitleInput>
+			<Container>
+				{icon &&
+					<Icon>
+						{icon}
+					</Icon>
+				}
+				<CustomInput {...rest}/>
+			</Container>
+		</>
+	)
 }

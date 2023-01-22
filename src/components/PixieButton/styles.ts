@@ -1,29 +1,21 @@
 import styled from "styled-components";
 
-const GreenButton = styled.button`
-	padding: 10px 32px;
-	font-size: 16px;
-	background-color: ${({ theme }) => theme.COLORS.primary_default};
-	color: ${({theme}) => theme.COLORS.white};
-	font-weight: semi-bold;
-	text-decoration: none;
-	border-radius: 8px;
-	border: none;
-	cursor: pointer;
-	font-weight: 500;
-`;
+export type styledButtonProps = {
+  buttonType: 'default' | 'light';
+}
 
-const LightGreenButton = styled.button`
-	padding: 10px 32px;
-	font-size: 16px;
-	font-weight: semi-bold;
-	background-color: ${({theme}) => theme.COLORS.gray_500};
-	color: ${({ theme }) => theme.COLORS.primary_default};
-	text-decoration: none;
-	border-radius: 8px;
-	border: none;
-	cursor: pointer;
-	font-weight: 500;
-`;
+export const Button = styled.button<styledButtonProps>`
+  background-color: ${({ theme, buttonType }) => buttonType === 'default' ? 
+  theme.COLORS.gray_400 : theme.COLORS.secondary_default};
+  color: ${({ theme }) => theme.COLORS.gray_100};
+  border: none;
+  margin-top: 1rem;
+  padding: 12px 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
 
-export { GreenButton, LightGreenButton };
+  &:hover{
+    background-color: ${({ theme }) => theme.COLORS.primary_default};
+  }
+`

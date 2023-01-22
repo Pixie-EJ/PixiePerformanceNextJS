@@ -1,10 +1,9 @@
+import PixieButton from '@components/PixieButton';
 import PixieInput from '@components/PixieInput';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { Button, Container, Form, Header } from './styles';
-// import Logo from './Logo Principal.png'
-
-// TODO dar uma olhada melhor em como refatorar esse cara aq
+import { Container, Form, Header, LinkText } from './styles';
+import { Envelope, Lock } from 'phosphor-react';
 
 export default function Login() {
   const route = useRouter();
@@ -21,26 +20,25 @@ export default function Login() {
           <h2>Bem vindo(a) a Pixie!</h2>
           <p>Faça login e comece a usar</p>
       </Header>
-      <div>
-        <Form>
-          {/* <label htmlFor="email">Endereço de e-mail</label>
-          <input id="email" type="email" placeholder={'Digite seu e-mail'}/> */}
-          <PixieInput 
-            placeholder='asdjksadhjkashd'
-            title='E-mail'
-          />
-          {/* <label htmlFor="password">Senha</label>
-          <input id="password" type="password" placeholder={'**********'}/> */}
-          <PixieInput 
-            title='Senha'
-            placeholder='asdjksadhjkashd'
-          />
-          <Button onClick={handleClick}> Entrar na plataforma</Button>
-          <a href="">Esqueceu sua senha?</a>
-          <a href="">Não possui conta ? Crie uma agora!</a>
-        </Form>
-      </div>
 
+      <Form>
+        <PixieInput 
+          label='Endereço de e-mail'
+          placeholder='Digite seu e-mail'
+          icon={<Envelope size={22} />}
+        />
+
+        <PixieInput 
+          label='Senha'
+          placeholder='*******'
+          icon={<Lock size={22} />}
+        />
+
+        <PixieButton onClick={(e) => handleClick(e)} buttonType='light'>Entrar na plataforma</PixieButton>
+      </Form>
+      
+      <LinkText href="">Esqueceu sua senha?</LinkText>
+      <LinkText href="">Não possui conta ? Crie uma agora!</LinkText>
     </Container>
   );
 }

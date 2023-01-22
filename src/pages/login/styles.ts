@@ -19,54 +19,24 @@ export const Header = styled.div`
 
   h2 {
     color: var(--white);
+    margin-bottom: .4rem;
   }
+  
   p{
-    color: var(--gray-400);
+    color: ${({ theme }) => theme.COLORS.gray_300};
     margin-top: 0;
   }
 `
 export const Form = styled.form`
   display: flex;
   flex-direction: column; 
-  justify-content:flex-start;
-
-  label {
-    color: ${({theme}) => theme.COLORS.gray_400};
-    margin-bottom: .5em;
-  }
-  input {
-    background-color: ${({ theme }) => theme.COLORS.gray_200};
-    border: 2px solid ${({ theme }) => theme.COLORS.gray_200};
-    border-radius:5px;
-    padding: 1em;
-    min-width: 300px;
-    margin-bottom: 1em;
-  }
-  input:focus {
-    border: 2px solid var(--primary-dark);
-    outline: none;
-  }
-
-  a {
-    margin-top: 1em;
-    text-align: center;
-    color: var(--gray-400);
-  }
-
-
+  justify-content: flex-start;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 `
 
-
-export const Button = styled.button`
-  background-color: ${({ theme }) => theme.COLORS.primary_dark};
-  border:none;
-  margin-top: 1em;
-  padding: 1em;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover{
-    background-color: ${({ theme }) => theme.COLORS.secondary_default};
-  }
-`
+export const LinkText = styled.a`
+  margin-top: .4rem;
+  text-align: center;
+  color: ${({ theme }) => theme.COLORS.gray_400};
+`;

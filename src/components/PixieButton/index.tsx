@@ -1,18 +1,12 @@
-import React from "react";
-import { GreenButton, LightGreenButton } from "./styles";
+import React, { ButtonHTMLAttributes } from "react";
+import { Button, styledButtonProps } from "./styles";
 
-// TODO refatorar isso aq com a glr da pixie
-export default function PixieButton(props) {
-    if (props.color === 'lightgreen') {
-        return (
-            <LightGreenButton onClick={props.callback}>
-            {props.text}
-            </LightGreenButton>
-        );
-    }
-    return (
-        <GreenButton onClick={props.callback}>
-        {props.text}
-        </GreenButton>
-    );
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & styledButtonProps & {
+}
+
+export default function PixieButton({ buttonType = 'default', ...rest }: Props) {
+	return (
+		<Button buttonType={buttonType} {...rest}>
+		</Button>
+	);
 }
